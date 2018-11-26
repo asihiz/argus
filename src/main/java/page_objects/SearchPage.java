@@ -55,8 +55,7 @@ public class SearchPage extends SeleniumBasePage {
                         getTitle(repo),
                         getDescription(repo),
                         getTags(repo),
-//                        getTime(repo),
-                        "",
+                        getTime(repo),
                         getLanguage(repo),
                         getStar(repo)));
                 repoNumber++;
@@ -92,7 +91,7 @@ public class SearchPage extends SeleniumBasePage {
         return getCurrentRepo().findElement(itemLocator).getText();
     }
 
-    private String doInnerLinkFlow(WebElement repo, WebElement item){
+    private String doInnerLinkFlow(){
         SeleniumDecorator.getInstance().measurePageLoad(getCurrentTag());
         SeleniumDecorator.getInstance().assertConsole(getCurrentTag());
         return getCurrentTag().getText();
@@ -124,7 +123,7 @@ public class SearchPage extends SeleniumBasePage {
         }
         List<WebElement> tags = tagContainer.findElements(tagsLocator);
         for(WebElement tag : tags){
-            tagsText.add(doInnerLinkFlow(repo, tag));
+            tagsText.add(doInnerLinkFlow());
             tagNumber++;
         }
         return tagsText;
