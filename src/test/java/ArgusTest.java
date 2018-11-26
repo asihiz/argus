@@ -46,15 +46,6 @@ public class ArgusTest extends BaseTest {
         loginPage.search("selenium");
     }
 
-//    private List<LinksData> initLinks(){
-//        List<LinksData> links = searchPage.getLinkElements();
-//        SeleniumDecorator.getInstance().getDriver().get(BASE_URL);
-//        loginPage = pageFactory.createPage(Page.LOGIN);
-//        loginPage.search("selenium");
-//        Collections.sort(links);
-//        return links;
-//    }
-
     @Test
     public void automationExercise() throws Exception {
 
